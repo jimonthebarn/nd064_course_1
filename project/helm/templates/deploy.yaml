@@ -16,8 +16,8 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: jimonthebarn/techtrends:latest
-        imagePullPolicy: IfNotPresent
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends-latest
         ports:
           - containerPort: {{ .Values.containerPort }}
